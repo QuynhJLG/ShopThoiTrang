@@ -32,6 +32,21 @@ border-radius:6px;
 border:none;
 }
 
+.menu{
+background:white;
+padding:10px;
+display:flex;
+justify-content:center;
+gap:20px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu a{
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
 .products{
 display:flex;
 flex-wrap:wrap;
@@ -68,7 +83,14 @@ padding:12px;
 border-radius:6px;
 cursor:pointer;
 width:100%;
+font-size:15px;
 }
+
+button:hover{
+background:#ff2a54;
+}
+
+/* Mobile */
 
 @media (max-width:600px){
 
@@ -84,6 +106,7 @@ width:90%;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -94,100 +117,77 @@ width:90%;
 <p>Phối đồ hot trend TikTok</p>
 
 <div class="search">
-<input type="text" id="search" placeholder="Tìm sản phẩm..." onkeyup="searchProduct()">
+<input type="text" placeholder="Tìm outfit...">
 </div>
 
 </header>
 
-<div class="products" id="products"></div>
+<div class="menu">
 
-<script>
-
-const products = [
-
-{
-name:"Set Đồ Xinh Đi Chơi",
-price:"105.000₫ - 169.000₫",
-img:"https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m7s016l11v2b3d.webp",
-link:"https://s.shopee.vn/8fNWL1EuyP"
-},
-
-{
-name:"Áo Set A01",
-price:"149.000₫",
-img:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mbent9og59yr70.webp",
-link:"https://s.shopee.vn/5VQW8AHfPs"
-},
-
-{
-name:"Chân Váy A01",
-price:"98.999₫",
-img:"https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m76gtcbxr0iv6c.webp",
-link:"https://s.shopee.vn/5fjwKUuuiW"
-},
-
-{
-name:"Nơ A01",
-price:"6.000₫",
-img:"https://down-vn.img.susercontent.com/file/sg-11134201-7reox-m8okxv3tgfj630.webp",
-link:"https://s.shopee.vn/1gDnZAZrPs"
-},
-
-{
-name:"Váy Tiểu Thư",
-price:"169.000₫",
-img:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m1uz2j8fuke773.webp",
-link:"https://s.shopee.vn/5VQaXls5aL"
-},
-
-{
-name:"Quần Jean Ống Suông",
-price:"199.000₫",
-img:"https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m8iv0r6i7ama17.webp",
-link:"https://s.shopee.vn/8ph2YlO0nqL"
-}
-
-];
-
-function loadProducts(list){
-
-let html="";
-
-list.forEach(p=>{
-
-html+=`
-<div class="card">
-
-<img src="${p.img}">
-<h3>${p.name}</h3>
-<div class="price">${p.price}</div>
-
-<a href="${p.link}">
-<button>Mua trên Shopee</button>
-</a>
+<a href="#">Váy</a>
+<a href="#">Áo</a>
+<a href="#">Quần</a>
+<a href="#">Phụ kiện</a>
 
 </div>
-`;
 
-});
+<div class="products">
 
-document.getElementById("products").innerHTML=html;
+<div class="card">
+<img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m7s016l11v2b3d.webp">
+<h3>Set Đồ Xinh Đi Chơi</h3>
+<div class="price">105.000₫ - 169.000₫</div>
+<a href="https://s.shopee.vn/8fNWL1EuyP">
+<button>Mua trên Shopee</button>
+</a>
+</div>
 
-}
+<div class="card">
+<img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mbent9og59yr70.webp">
+<h3>Áo Set A01</h3>
+<div class="price">149.000₫</div>
+<a href="https://s.shopee.vn/5VQW8AHfPs">
+<button>Mua trên Shopee</button>
+</a>
+</div>
 
-function searchProduct(){
+<div class="card">
+<img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m76gtcbxr0iv6c.webp">
+<h3>Chân Váy A01</h3>
+<div class="price">98.999₫</div>
+<a href="https://s.shopee.vn/5fjwKUuuiW">
+<button>Mua trên Shopee</button>
+</a>
+</div>
 
-let keyword=document.getElementById("search").value.toLowerCase();
+<div class="card">
+<img src="https://down-vn.img.susercontent.com/file/sg-11134201-7reox-m8okxv3tgfj630.webp">
+<h3>Nơ A01</h3>
+<div class="price">6.000₫</div>
+<a href="https://s.shopee.vn/1gDnZAZrPs">
+<button>Mua trên Shopee</button>
+</a>
+</div>
 
-let filtered=products.filter(p=>p.name.toLowerCase().includes(keyword));
+<div class="card">
+<img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m1uz2j8fuke773.webp">
+<h3>Váy Tiểu Thư</h3>
+<div class="price">169.000₫</div>
+<a href="https://s.shopee.vn/5VQaXls5aL">
+<button>Mua trên Shopee</button>
+</a>
+</div>
 
-loadProducts(filtered);
+<div class="card">
+<img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m8iv0r6i7ama17.webp">
+<h3>Quần Jean Ống Suông</h3>
+<div class="price">199.000₫</div>
+<a href="https://s.shopee.vn/8ph2YlO0nqL">
+<button>Mua trên Shopee</button>
+</a>
+</div>
 
-}
-
-loadProducts(products);
-
-</script>
+</div>
 
 </body>
 </html>
